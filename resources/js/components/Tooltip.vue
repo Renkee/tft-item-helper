@@ -122,7 +122,9 @@ export default {
       this.cursorPosX = e.pageX - window.scrollX
       this.cursorPosY = e.pageY - window.scrollY
     })
-
+    window.addEventListener('scroll', e => {
+      this.enabled = false;
+    })
   }
 }
 </script>
