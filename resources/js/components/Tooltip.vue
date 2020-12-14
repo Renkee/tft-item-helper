@@ -80,12 +80,29 @@ export default {
     build(id) {
       let index = this.$store.getters['builds/findIndexById'](id)
       return this.$store.state.builds.builds[index]
+    },
+    generatePath(el) {
+      var path = [];
+      while (el) {
+          path.push(el);
+          if (el.tagName === 'HTML') {
+              path.push(document);
+              path.push(window);
+
+              return path;
+        }
+        el = el.parentElement;
+      }
     }
   },
   created() {
     window.addEventListener('mousemove', e => {
+      // Firefox bug fix, generate path if feature is not implemented in browser
+      if (!e.path) {
+        e.path = this.generatePath(e.target)
+      }
       // Set up mouse hover detection
-      if(e.path && e.path.length > 0) {
+      if(e.path.length > 0) {
         // Search for classes in path that match predefined types
         for (let pathEl of e.path) {
           if (pathEl.classList && pathEl.classList.length > 0) {
