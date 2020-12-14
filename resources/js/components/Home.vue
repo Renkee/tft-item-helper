@@ -99,7 +99,9 @@ export default {
 #user-item-component-display {
   margin-top: 12px
 }
-
+#build-display {
+  margin-bottom: 128px;
+}
 .h2-title {
   display: flex;
   flex-direction: row;
