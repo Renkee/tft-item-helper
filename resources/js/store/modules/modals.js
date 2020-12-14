@@ -16,6 +16,11 @@ const state = () => ({
 })
 
 const getters = {
+  anyEnabled(state) {
+    return Object.values(state)
+      .map(modal => modal.enabled)
+      .findIndex(b => b === true) !== -1
+  }
 }
 
 const actions = {

@@ -68,13 +68,26 @@ export default {
     buildsSortedByItemScore() {
       return this.$store.getters['builds/sortedByItemScore']
     },
+    anyModalsEnabled() {
+      return this.$store.getters['modals/anyEnabled']
+    }
+  },
+  watch: {
+    'anyModalsEnabled': function(newVal) {
+      this.disableScrollingOnHtmlTag(newVal)
+    }
   },
   methods: {
-    testNotification() {
-      this.$store.dispatch('notification/add', {
-        message: "Testing...",
-        color: this.$store.state.notification.color.info
-      })
+    disableScrollingOnHtmlTag(anyModalsEnabled) {
+      let html = document.documentElement
+      if (anyModalsEnabled) {
+        let offset = window.innerWidth - document.body.offsetWidth
+        html.style.paddingRight = `${offset}px`
+        html.style.overflow = 'hidden'
+      } else {
+        html.style.paddingRight = '0'
+        html.style.overflow = 'auto'
+      }
     }
   }
 }
