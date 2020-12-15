@@ -18,7 +18,9 @@
       </div>
       <div id="build-container">
         <div v-if="buildsSortedByItemScore.length > 0">
-          <BuildDisplay v-for="build in buildsSortedByItemScore" :key="build.name" :build="build"/>
+          <transition-group name="build">
+            <BuildDisplay v-for="build in buildsSortedByItemScore" :key="build.name" :build="build"/>
+          </transition-group>
         </div>
         <div v-else>
           <h3>No builds found. Maybe you could add some?</h3>
@@ -94,6 +96,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 #container {
   padding: 15px;
   max-width: 1200px;
@@ -122,5 +125,8 @@ export default {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 16px;
+}
+.build-move {
+  transition: transform 0.5s ease;
 }
 </style>
