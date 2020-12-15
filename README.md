@@ -21,7 +21,7 @@ Now you need to edit the `.env` file. Use your favorite editor to do so.
 
 Replace `APP_CODE_PATH_HOST=../` with `APP_CODE_PATH_HOST=../tft-item-helper`
 
-Configure MySQL however you want, the only thing that matters is that the Vue app's .env file is configured the same way.
+Configure MySQL however you want, the only thing that matters is that the Laravel app's .env file is configured the same way.
 
 Example:
 ```
