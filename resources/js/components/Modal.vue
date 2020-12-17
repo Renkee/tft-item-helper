@@ -65,6 +65,7 @@ export default {
   flex-direction: column;
 }
 .modal-body {
+  color: black;
   flex: 1;
   overflow-y: auto;
 }
