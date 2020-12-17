@@ -26,12 +26,12 @@ export default {
     width: {
       required: false,
       type: String,
-      default: '85vw'
+      default: '95vw'
     },
     height: {
       required: false,
       type: String,
-      default: '85vh'
+      default: '95vh'
     },
     padding: {
       required: false,
@@ -65,6 +65,7 @@ export default {
   flex-direction: column;
 }
 .modal-title {
+  color: black;
   flex: 0;
   font-weight: bold;
   font-size: 2rem;
