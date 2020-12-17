@@ -46,7 +46,11 @@ export default {
 
 <style lang="scss" scoped>
 #user-item-select {
-  user-select: none
+  user-select: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 110px);
+  justify-content: center;
+  width: 100%;
 }
 .component-item {
   width: 64px;
@@ -55,7 +59,7 @@ export default {
 }
 .components {
   display: inline-block;
-  margin-right: 16px;
+  //margin-right: 16px;
 }
 .component-picker-component-container {
   display: flex;

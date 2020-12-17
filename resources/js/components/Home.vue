@@ -60,9 +60,6 @@ export default {
     Notification,
     Tooltip
   },
-  data: () => ({
-    createBuildModalEnabled: false
-  }),
   computed: {
     userItems() {
       return this.$store.state.user.items
