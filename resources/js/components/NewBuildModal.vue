@@ -114,7 +114,7 @@ export default {
   #new-build-modal-body {
     gap: 15px 15px;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: minmax(0, 1fr) 200px;
+    grid-template-rows: minmax(0, 3fr) minmax(200px, 1fr);
     grid-template-areas:
       "champion-area item-area"
       "showcase-area showcase-area";
