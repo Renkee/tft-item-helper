@@ -64,13 +64,6 @@ export default {
   display: flex;
   flex-direction: column;
 }
-.modal-title {
-  color: black;
-  flex: 0;
-  font-weight: bold;
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
 .modal-body {
   flex: 1;
   overflow-y: auto;
@@ -87,6 +80,25 @@ export default {
     &:last-child {
       margin-right: 0px;
     }
+  }
+}
+.modal-title {
+  color: black;
+  flex: 0;
+  font-weight: bold;
+}
+// DESKTOP
+@media only screen and (min-width: 631px) {
+  .modal-title {
+    margin-bottom: 12px;
+    font-size: 2rem;
+  }
+}
+// MOBILE
+@media only screen and (max-width: 630px) {
+  .modal-title {
+    margin-bottom: 6px;
+    font-size: 1.5rem;
   }
 }
 </style>

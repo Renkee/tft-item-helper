@@ -124,17 +124,6 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
 }
-.draggable-build-showcase-ghost {
-  margin: 0 4px 4px 0 !important;
-  padding-bottom: 28px !important;
-  width: 84px !important;
-  height: 84px !important;
-}
-.showcase-champion {
-  width: 84px;
-  height: 84px;
-  display: inline-block;
-}
 .showcase-item-container {
   font-size: 0;
   line-height: 0;
@@ -146,14 +135,69 @@ export default {
 .showcase-items {
   flex: 1;
 }
+.showcase-champion {
+  display: inline-block;
+}
 .showcase-item-image {
-  width: 24px;
-  height: 24px;
   margin-right: 2px;
 }
 .showcase-item-image-ghost {
   margin: 0 2px 0 0 !important;
-  width: 24px !important;
-  height: 24px !important;
+}
+.showcase-item-container {
+  display: flex;
+  font-size: 0;
+  line-height: 0;
+  white-space: nowrap;
+}
+// DESKTOP
+@media only screen and (min-width: 631px) {
+  .draggable-build-showcase-ghost {
+    margin: 0 4px 4px 0 !important;
+    padding-bottom: 28px !important;
+    width: 84px !important;
+    height: 84px !important;
+  }
+  .showcase-champion {
+    width: 84px;
+    height: 84px;
+  }
+  .showcase-item-image {
+    width: 24px;
+    height: 24px;
+  }
+  .showcase-item-image-ghost {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .showcase-item-container {
+    padding: 0 2px 4px 4px;
+    min-height: 24px;
+  }
+}
+// MOBILE
+@media only screen and (max-width: 630px) {
+  .draggable-build-showcase-ghost {
+    margin: 0 2px 2px 0 !important;
+    padding-bottom: 22.28px !important;
+    width: 64px !important;
+    height: 64px !important;
+  }
+  .showcase-champion {
+    width: 64px;
+    height: 64px;
+  }
+  .showcase-item-image {
+    width: 18.28px;
+    height: 18.28px;
+  }
+  .showcase-item-image-ghost {
+    width: 18.28px !important;
+    height: 18.28px !important;
+  }
+  .showcase-item-container {
+    padding: 0 1px 4px 2px;
+    min-height: 18.28px;
+  }
 }
 </style>

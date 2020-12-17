@@ -98,13 +98,7 @@ export default {
 }
 #new-build-modal-body {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: minmax(0, 1fr) 200px;
   max-height: 100%;
-  gap: 15px 15px;
-  grid-template-areas:
-    "champion-area item-area"
-    "showcase-area showcase-area";
 }
 #champion-area {
   grid-area: champion-area;
@@ -114,5 +108,28 @@ export default {
 }
 #showcase-area {
   grid-area: showcase-area;
+}
+// DESKTOP
+@media only screen and (min-width: 631px) {
+  #new-build-modal-body {
+    gap: 15px 15px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: minmax(0, 1fr) 200px;
+    grid-template-areas:
+      "champion-area item-area"
+      "showcase-area showcase-area";
+  }
+}
+// MOBILE
+@media only screen and (max-width: 630px) {
+  #new-build-modal-body {
+    gap: 7px 7px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(96px, 1fr) minmax(48px, 1fr) minmax(128px, 1fr);
+    grid-template-areas:
+      "champion-area"
+      "item-area"
+      "showcase-area";
+  }
 }
 </style>

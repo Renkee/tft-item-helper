@@ -52,8 +52,21 @@ export default {
 <style lang="scss" scoped>
 .draggable-champion {
   display: inline-block;
+}
+// DESKTOP
+@media only screen and (min-width: 631px) {
+.draggable-champion {
   margin: 2px;
   width: 75px;
   height: 75px;
+}
+}
+// MOBILE
+@media only screen and (max-width: 630px) {
+.draggable-champion {
+  margin: 1px;
+  width: 64px;
+  height: 64px;
+}
 }
 </style>
