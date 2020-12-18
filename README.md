@@ -56,9 +56,9 @@ Now you need to start the docker build process.
 cd ../laradock
 docker-compose up -d mysql nginx workspace
 ```
-This might take a while... After this, you need to import the DB dump `tftdump_newest.sql` into MySQL
+This might take a while... After this, you need to import the DB dump `tft_app_dump.sql` into MySQL
 ```
-docker-compose exec -T mysql mysql -uRenkee -psupersecret tft_app < ../tft-item-helper/tftdump_newest.sql
+docker-compose exec -T mysql mysql -uRenkee -psupersecret tft_app < ../tft-item-helper/tft_app_dump.sql
 docker-compose exec workspace bash
 composer install
 php artisan key:generate
