@@ -10,8 +10,13 @@
     <div id="top-bar">
       <h1>TFT Item Helper</h1>
       <div id="user-component-display-container">
-        <ComponentDisplay id="user-component-display" v-if="Object.values(userItems).reduce((acc, curr) => acc + curr) > 0" :componentList="userItems" backgroundColor="#ff00ff"/>
-        <div id="user-component-display-text-container" v-else>
+        <ComponentDisplay
+          v-if="Object.values(userItems).reduce((acc, curr) => acc + curr) > 0"
+          id="user-component-display"
+          :componentList="userItems"
+          backgroundColor="#ff00ff"
+        />
+        <div v-else id="user-component-display-text-container">
           <h4>Your selected items will appear here.</h4>
         </div>
       </div>
