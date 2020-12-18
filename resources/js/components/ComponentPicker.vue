@@ -68,7 +68,7 @@ export default {
   line-height: 0;
   font-size: 0;
   padding: 4px;
-  background-color: #ff00ff;
+  background-color: #cf00cf;
   color: white;
   margin-bottom: 2px;
 }
@@ -84,7 +84,7 @@ export default {
   font-weight: 600;
 }
 .button-disabled {
-  opacity: 0.7;
+  opacity: 0.6;
   cursor: unset !important;
 }
 .component-count-button {

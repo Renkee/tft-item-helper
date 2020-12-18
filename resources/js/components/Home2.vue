@@ -1,7 +1,9 @@
 <template>
   <div id="main-container">
     <div id="sidebar">
-      <ComponentPicker />
+      <div id="user-component-picker-container">
+        <ComponentPicker />
+      </div>
       <div id="side-buttons">
         <button @click="$store.dispatch('user/clearAllItems')">Clear items</button>
         <button @click="$store.commit('modals/setCreateNewBuildEnabled', true)">New build</button>
@@ -103,6 +105,9 @@ export default {
 #sidebar {
   grid-area: sidebar;
   display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: #cf00cf;
 
   #user-item-select {
     min-height: 0;
@@ -110,9 +115,17 @@ export default {
 }
 #top-bar {
   grid-area: top-bar;
+  background-color: #ff00ff;
+}
+#user-component-display-text-container {
+  display: grid;
+  min-height: inherit;
+  justify-content: center;
 }
 #builds {
   grid-area: builds;
+  background-color: #fafafa;
+  color: black;
   & > div:last-child {
     margin-bottom: 96px;
   }
@@ -124,7 +137,7 @@ export default {
   border: none;
 
   &:hover {
-    background-color: #c900c9;
+    background-color: #940094;
   }
 }
 .build-move {
@@ -160,16 +173,9 @@ export default {
     overflow: hidden;
 
     #sidebar {
-      flex-direction: column;
-      flex-wrap: nowrap;
       justify-content: space-between;
-      background-color: #ff00ff;
       padding: 2px;
       overflow: hidden;
-
-      #user-item-select {
-        justify-content: flex-start !important;
-      }
     }
 
     #top-bar {
@@ -178,17 +184,13 @@ export default {
       flex-wrap: nowrap;
       justify-content: space-between;
       align-items: flex-end;
-      background-color: #ff00ff;
       padding: 8px;
       overflow: hidden;
 
       #user-component-display-container {
         min-height: 49px;
         #user-component-display-text-container {
-          display: grid;
-          justify-content: center;
           align-items: flex-end;
-          min-height: inherit;
           opacity: 0.9;
         }
       }
@@ -196,8 +198,6 @@ export default {
 
 
     #builds {
-      background-color: #fafafa;
-      color: black;
       height: 100%;
       overflow: auto;
       & > div {
@@ -215,12 +215,13 @@ export default {
     flex-direction: column;
 
     #sidebar {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: nowrap;
       align-items: center;
-      background-color: #ff00ff;
       margin-bottom: 24px;
+      padding-top: 18px;
+
+      #user-component-picker-container {
+        width: 100%;
+      }
 
       #side-buttons {
         margin-top: 24px;
@@ -236,17 +237,13 @@ export default {
 
     #top-bar {
       order: -1;
-      background-color: #ff00ff;
 
       #user-component-display-container {
-        margin: 0 8px 24px 8px;
+        //margin: 0 8px 24px 8px;
         background-color: #ff62ff;
         min-height: 98px !important;
 
         #user-component-display-text-container {
-          min-height: inherit;
-          display: grid;
-          justify-content: center;
           align-items: center;
         }
 
@@ -260,12 +257,6 @@ export default {
         margin: 24px auto 24px auto;
         text-align: center;
       }
-
-    }
-
-    #builds {
-      background-color: #fafafa;
-      color: black;
     }
   }
 }
