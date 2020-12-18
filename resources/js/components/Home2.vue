@@ -108,6 +108,9 @@ export default {
 }
 #builds {
   grid-area: builds;
+  & > div:last-child {
+    margin-bottom: 96px;
+  }
 }
 #side-buttons > button {
   display: block !important;
