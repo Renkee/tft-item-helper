@@ -16,7 +16,7 @@
           v-if="Object.values(userItems).reduce((acc, curr) => acc + curr) > 0"
           id="user-component-display"
           :componentList="userItems"
-          backgroundColor="#ff00ff"
+          backgroundColor="#cf253e"
         />
         <div v-else id="user-component-display-text-container">
           <h4>Your selected items will appear here.</h4>
@@ -26,7 +26,7 @@
     </div>
     <div id="builds">
       <div v-if="buildsSortedByItemScore.length > 0">
-        <transition-group name="build">
+        <transition-group tag="div" name="build">
           <BuildDisplay v-for="build in buildsSortedByItemScore" :key="build.name" :build="build"/>
         </transition-group>
       </div>
@@ -101,13 +101,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/colors';
 // GENERAL
 #sidebar {
   grid-area: sidebar;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  background-color: #cf00cf;
+  background-color: $secondary;
 
   #user-item-select {
     min-height: 0;
@@ -115,7 +116,7 @@ export default {
 }
 #top-bar {
   grid-area: top-bar;
-  background-color: #ff00ff;
+  background-color: $primary;
 }
 #user-component-display-text-container {
   display: grid;
@@ -124,8 +125,7 @@ export default {
 }
 #builds {
   grid-area: builds;
-  background-color: #fafafa;
-  color: black;
+  background-color: $background;
   & > div:last-child {
     margin-bottom: 96px;
   }
@@ -133,11 +133,11 @@ export default {
 #side-buttons > button {
   display: block !important;
   width: 100%;
-  color: white;
+  color: $text-primary;
   border: none;
 
   &:hover {
-    background-color: #940094;
+    background-color: #622574;
   }
 }
 .build-move {
@@ -148,22 +148,22 @@ export default {
 @media only screen and (min-width: 641px) {
   @media only screen and (min-height: 800px){
     #user-item-select {
-      grid-template-columns: repeat(1, 100px) !important;
+      grid-template-columns: repeat(1, min-content) !important;
     }
   }
   @media only screen and (min-height: 500px) and (max-height: 799px) {
     #user-item-select {
-      grid-template-columns: repeat(2, 100px) !important;
+      grid-template-columns: repeat(2, min-content) !important;
     }
   }
   @media only screen and (max-height: 499px) {
     #user-item-select {
-      grid-template-columns: repeat(3, 100px) !important;
+      grid-template-columns: repeat(3, min-content) !important;
     }
   }
   #main-container {
     display: grid;
-    grid-template-columns: minmax(100px, min-content) 1fr;
+    grid-template-columns: min-content 1fr;
     grid-template-rows: min-content 1fr;
     grid-template-areas:
     "top-bar top-bar"
@@ -240,7 +240,7 @@ export default {
 
       #user-component-display-container {
         //margin: 0 8px 24px 8px;
-        background-color: #ff62ff;
+        background-color: #c662e2;
         min-height: 98px !important;
 
         #user-component-display-text-container {
@@ -249,7 +249,7 @@ export default {
 
         #user-component-display {
           text-align: center;
-          background-color: #ff62ff !important;
+          background-color: #c662e2 !important;
         }
       }
 

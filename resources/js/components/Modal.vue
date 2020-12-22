@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/colors';
 .modal-container {
   position: fixed;
   z-index: 9998;
@@ -65,7 +66,7 @@ export default {
   flex-direction: column;
 }
 .modal-body {
-  color: black;
+  color: $dark-text-primary;
   flex: 1;
   overflow-y: auto;
 }
@@ -84,7 +85,7 @@ export default {
   }
 }
 .modal-title {
-  color: black;
+  color: $dark-text-primary;
   flex: 0;
   font-weight: bold;
 }

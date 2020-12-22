@@ -97,19 +97,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/colors';
 .build-container {
   margin-bottom: 24px;
-  border: 4px solid #ff00ff;
+  border: 4px solid $primary;
   display: table;
   h4 {
     margin-bottom: 2px;
   }
 }
 .build-title-container {
-  background-color: #ff00ff;
+  background-color: $primary;
   padding: 10px;
   line-height: 0.75;
-  color: white;
+  color: $text-primary;
   h3 {
     padding: 2.5px 0 2.5px 0;
   }

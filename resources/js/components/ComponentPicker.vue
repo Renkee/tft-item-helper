@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/colors';
 #user-item-select {
   user-select: none;
   display: grid;
@@ -68,8 +69,8 @@ export default {
   line-height: 0;
   font-size: 0;
   padding: 4px;
-  background-color: #cf00cf;
-  color: white;
+  background-color: $secondary;
+  color: $text-primary;
   margin-bottom: 2px;
 }
 .component-count-container {
@@ -90,7 +91,7 @@ export default {
 .component-count-button {
   background-color: unset;
   border: unset;
-  color: white;
+  color: $text-primary;
   font-size: 0.75rem;
   padding: 2px 4px 2px 4px;
   margin: 0;

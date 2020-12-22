@@ -63,9 +63,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/colors';
 .draggable-area {
-  background-color: #fafafa;
-  border: 4px solid #ff00ff;
+  background-color: $text-primary;
+  border: 4px solid $primary;
   line-height: 0;
   user-select: none;
 }
@@ -78,8 +79,8 @@ export default {
   padding: 8px;
   max-width: 225px;
   max-height: 36px;
-  color: white;
-  background-color: #ff00ff;
+  color: $text-primary;
+  background-color: $primary;
   label {
     font-weight: 600;
     margin-right: 10px;

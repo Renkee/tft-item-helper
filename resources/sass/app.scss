@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;600;700;900&display=swap');
 
 // Variables
-@import 'variables';
+@import 'colors';
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -37,7 +37,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	color: white;
+	color: $text-primary;
 }
 ol, ul {
 	list-style: none;
@@ -63,8 +63,7 @@ html {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight: 400;
 	font-variant-numeric: normal;
-	background-color: #fafafa;
-	color: #0f0f0f;
+	background-color: $background;
 }
 button {
 	all: unset;
@@ -72,14 +71,14 @@ button {
 	padding: 8px;
 	font-weight: bold;
 	transition: background-color 0.25s cubic-bezier(.05,.83,.45,.83);
-	color: black;
-	border: 2px solid #ff00ff;
+	color: $dark-text-primary;
+	border: 2px solid $primary;
 	&:hover {
-		background-color: #ffe6ff;
+		background-color: #f6fce5;
 	}
 }
 .delete-button:hover {
-  background-color: #ffe3e3 !important;
+  background-color: #ffbec9 !important;
 }
 h1 {
   font-weight: 900;
@@ -89,7 +88,7 @@ h2 {
 	font-size: 2.25rem;
 	font-weight: 700;
 	text-decoration: underline;
-	text-decoration-color: #ff00ff;
+	text-decoration-color: $primary;
 }
 h3 {
 	font-size: 1.5rem;

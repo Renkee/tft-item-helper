@@ -43,6 +43,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/colors';
 #notification-holder {
   position: fixed;
   top: 1rem;
@@ -54,7 +55,7 @@ export default {
   }
 }
 .notification {
-  color: white;
+  color: $text-primary;
   width: 300px;
   min-height: 100px;
   padding: 0.5rem;
@@ -73,7 +74,7 @@ export default {
   background-color: unset;
   border: unset;
   position: absolute;
-  color: white;
+  color: $text-primary;
   top: 0.25rem;
   right: 0.5rem;
   padding: 2px;

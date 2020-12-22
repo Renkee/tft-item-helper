@@ -21,6 +21,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/colors';
 .container {
   display: flex;
   flex-direction: column;
@@ -35,8 +36,8 @@ export default {
   flex: 0;
   line-height: 1;
   font-weight: bold;
-  background-color: #ff00ff;
-  color: white;
+  background-color: $primary;
+  color: $text-primary;
   z-index: 0;
 }
 // DESKTOP

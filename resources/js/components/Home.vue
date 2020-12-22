@@ -93,7 +93,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import 'resources/sass/colors';
 #container {
   padding: 15px;
   max-width: 1200px;
@@ -101,9 +101,9 @@ export default {
 }
 #title-container {
   display: inline-block;
-  color: white;
+  color: $text-primary;
   padding: 10px;
-  background-color: #ff00ff;
+  background-color: $primary;
 }
 #user-item {
   margin-bottom: 32px;
