@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="enabled"
-    :style="`top: ${cursorPosY + cursorOffset}px; left: ${cursorPosX + cursorOffset}px`"
+    :style="`top: ${cursorPosY}px; left: ${cursorPosX}px`"
     id="tooltip"
   >
     <div
@@ -51,7 +51,8 @@ export default {
   data: () => ({
     enabled: false,
     currentTarget: {},
-    cursorOffset: 15,
+    cursorOffsetX: 15,
+    cursorOffsetY: 20,
     cursorPosX: 0,
     cursorPosY: 0,
     acceptedTypes: ['champion', 'completed', 'component', 'components-for-build']
@@ -136,8 +137,17 @@ export default {
       }
 
       // Remember cursor location for tooltip position
-      this.cursorPosX = e.pageX - window.scrollX
-      this.cursorPosY = e.pageY - window.scrollY
+      // Adjust location to left if tooltip doesn't fit on viewport
+      // Wait for DOM to update the tooltip's width
+      this.$nextTick(() => {
+        if (this.$el && this.$el.scrollWidth) {
+          this.cursorPosX = e.pageX - window.scrollX + this.cursorOffsetX
+          this.cursorPosY = e.pageY - window.scrollY + this.cursorOffsetY
+
+          let adjustmentAmount = (this.cursorPosX + this.$el.scrollWidth) - window.innerWidth
+          this.cursorPosX -= (adjustmentAmount > 0 ? adjustmentAmount : 0)
+        }
+      })
     })
     window.addEventListener('scroll', e => {
       this.enabled = false;
@@ -147,14 +157,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import 'resources/sass/colors';
 #tooltip {
-  color: white;
-  background-color: #ff00ff;
+  color: $text-primary;
+  background-color: $primary;
   padding: 5px;
   position: fixed;
   z-index: 999999;
   pointer-events: none;
   box-shadow: 0px 0px 15px -6px #2D302D;
+  white-space: nowrap;
 }
 #completed-variation {
   & > div {
