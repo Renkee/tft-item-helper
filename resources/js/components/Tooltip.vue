@@ -144,7 +144,9 @@ export default {
           this.cursorPosX = e.pageX - window.scrollX + this.cursorOffsetX
           this.cursorPosY = e.pageY - window.scrollY + this.cursorOffsetY
 
-          let adjustmentAmount = (this.cursorPosX + this.$el.scrollWidth) - window.innerWidth
+          this.$el.style.maxWidth = `${document.body.offsetWidth}px`
+
+          let adjustmentAmount = (this.cursorPosX + this.$el.scrollWidth) - document.body.offsetWidth
           this.cursorPosX -= (adjustmentAmount > 0 ? adjustmentAmount : 0)
         }
       })
@@ -167,6 +169,7 @@ export default {
   pointer-events: none;
   box-shadow: 0px 0px 15px -6px #2D302D;
   white-space: nowrap;
+  width: fit-content;
 }
 #completed-variation {
   & > div {

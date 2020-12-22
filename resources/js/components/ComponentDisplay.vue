@@ -1,5 +1,8 @@
 <template>
-<div :style="`min-height: ${imgSize + (gapSize * 2)}px; background-color: ${backgroundColor};`">
+<div
+  class="component-display-container"
+  :style="`min-height: ${imgSize + (gapSize * 2)}px; background-color: ${backgroundColor};`"
+>
   <span
     v-for="(numberOfComponents, componentId) in componentList"
     :key="'A' + componentId"
@@ -49,3 +52,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.component-display-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+</style>
