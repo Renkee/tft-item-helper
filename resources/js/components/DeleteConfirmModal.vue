@@ -2,7 +2,7 @@
   <Modal :enabled="$store.state.modals.deleteConfirm.enabled" width="280px" height="130px" padding="16px">
     <template v-slot:title>Are you sure?</template>
     <template v-slot:body>
-      This build will be deleted if you click on "Yes".
+      This build will be deleted.
     </template>
     <template v-slot:buttons>
       <button class="delete-button" @click="remove">Yes</button>
