@@ -234,7 +234,6 @@ export default {
       }
     }
 
-
     #top-bar {
       order: -1;
 
@@ -257,6 +256,10 @@ export default {
         margin: 24px auto 24px auto;
         text-align: center;
       }
+    }
+
+    #builds {
+      margin: 0 4px;
     }
   }
 }
