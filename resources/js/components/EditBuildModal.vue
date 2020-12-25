@@ -120,7 +120,7 @@ export default {
   #edit-build-modal-body {
     gap: 7px 7px;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: minmax(96px, 1fr) minmax(48px, 1fr) minmax(128px, 1fr);
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas:
       "champion-area"
       "item-area"
