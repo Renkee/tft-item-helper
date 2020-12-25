@@ -36,7 +36,7 @@ export default {
     padding: {
       required: false,
       type: String,
-      default: '1vmax'
+      default: '1vh 1vw'
     }
   }
 }
