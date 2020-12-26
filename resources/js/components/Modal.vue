@@ -1,7 +1,10 @@
 <template>
   <div v-if="enabled" class="modal-container">
-    <div class="modal-table-wrapper">
-      <div class="modal-content" :style="`width: ${width}; height: ${height}; padding: ${padding}`">
+    <div
+      class="modal-table-wrapper"
+      :style="`grid-template-columns: minmax(0, ${width}); grid-template-rows: minmax(0, ${height});`"
+    >
+      <div class="modal-content" :style="`padding: ${padding};`">
         <div class="modal-title">
           <slot name="title"></slot>
         </div>
@@ -26,17 +29,17 @@ export default {
     width: {
       required: false,
       type: String,
-      default: '95vw'
+      default: '95%'
     },
     height: {
       required: false,
       type: String,
-      default: '95vh'
+      default: '95%'
     },
     padding: {
       required: false,
       type: String,
-      default: '1vh 1vw'
+      default: '8px'
     }
   }
 }
@@ -47,21 +50,21 @@ export default {
 .modal-container {
   position: fixed;
   z-index: 9998;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  display: table;
 }
 .modal-table-wrapper {
-  display: table-cell;
-  vertical-align: middle;
+  display: grid;
+  place-content: center;
+  grid-template-columns: minmax(0, 95vw);
+  grid-template-rows: minmax(0, 95vh);
+  width: 100%;
+  height: 100%;
 }
 .modal-content {
   margin: 0 auto;
 
-  background-color: #fafafa;
+  background-color: $background;
   display: flex;
   flex-direction: column;
 }
