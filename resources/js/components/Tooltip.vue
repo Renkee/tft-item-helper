@@ -146,8 +146,11 @@ export default {
 
           this.$el.style.maxWidth = `${document.body.offsetWidth}px`
 
-          let adjustmentAmount = (this.cursorPosX + this.$el.scrollWidth) - document.body.offsetWidth
-          this.cursorPosX -= (adjustmentAmount > 0 ? adjustmentAmount : 0)
+          let adjustmentAmountX = (this.cursorPosX + this.$el.scrollWidth) - document.body.offsetWidth
+          this.cursorPosX -= (adjustmentAmountX > 0 ? adjustmentAmountX : 0)
+
+          let adjustmentAmountY = (this.cursorPosY + this.$el.scrollHeight) - document.body.offsetHeight
+          this.cursorPosY -= (adjustmentAmountY > 0 ? adjustmentAmountY : 0)
         }
       })
     })
