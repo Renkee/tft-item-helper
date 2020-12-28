@@ -49,9 +49,12 @@
 </template>
 
 <script>
+const cloneDeep = require('lodash.clonedeep');
+
 import ComponentDisplay from './ComponentDisplay'
 import Champion from './Champion'
 import CompletedItem from './CompletedItem'
+
 export default {
   props: {
     build: {
@@ -81,8 +84,8 @@ export default {
     },
     editBuild() {
       // Create copies of the build being edited
-      this.$store.commit('modals/setEditBuildInitial', _.cloneDeep(this.build))
-      this.$store.commit('modals/setEditBuildEdited', _.cloneDeep(this.build))
+      this.$store.commit('modals/setEditBuildInitial', cloneDeep(this.build))
+      this.$store.commit('modals/setEditBuildEdited', cloneDeep(this.build))
 
       this.$store.commit('modals/setEditBuildEnabled', true)
     },
