@@ -6,7 +6,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <title>TFT App</title>
-    </style>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
 </head>
 <body class="antialiased">
     <div id="app"><router-view></router-view></div>
