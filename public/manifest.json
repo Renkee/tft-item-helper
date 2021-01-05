@@ -4,7 +4,7 @@
     "display": "standalone",
     "scope": "/",
     "start_url": "/",
-    "app_name": "TFT Item Helper",
+    "name": "TFT Item Helper",
     "short_name": "TFT Helper",
     "description": "Helps you choose between TFT builds",
     "icons": [
